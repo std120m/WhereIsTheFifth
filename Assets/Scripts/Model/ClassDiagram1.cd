@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Assets.Scripts.Model.Armor">
-    <Position X="8.25" Y="4.75" Width="1.25" />
+    <Position X="8.75" Y="6" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Model\Armor.cs</FileName>
@@ -10,47 +10,47 @@
   <Class Name="Assets.Scripts.Model.CardObject">
     <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAggAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Model\CardObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assets.Scripts.Model.Effect">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAgAAAgAgAAAAAAAAQAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>Assets\Scripts\Model\Effect.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assets.Scripts.Model.Item">
-    <Position X="6.25" Y="2.5" Width="1.75" />
+    <Position X="6.75" Y="3.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Model\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assets.Scripts.Model.Monster">
-    <Position X="1.5" Y="7.25" Width="1.5" />
+    <Position X="1.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Model\Monster.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assets.Scripts.Model.MonsterBodyParts">
-    <Position X="6.25" Y="4.75" Width="1.75" />
+    <Position X="6.75" Y="6" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Model\MonsterBodyParts.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assets.Scripts.Model.Squad">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+    <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAgAAAABAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Assets\Scripts\Model\Squad.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assets.Scripts.Model.Unit">
-    <Position X="2.5" Y="2.5" Width="1.5" />
+    <Position X="2.5" Y="3.5" Width="1.5" />
     <NestedTypes>
       <Delegate Name="Assets.Scripts.Model.Unit.AttackHandler" Collapsed="true">
         <TypeIdentifier>
@@ -59,22 +59,57 @@
       </Delegate>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAACACAAAAgCAAAAAAAAAQAAKAAAAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACACAAAAwCAAAAAAAAAQAgKAAAAIEAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Model\Unit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assets.Scripts.Model.Warrior">
-    <Position X="3.5" Y="7.25" Width="1.5" />
+    <Position X="3.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Model\Warrior.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assets.Scripts.Model.Weapon">
-    <Position X="4.75" Y="4.75" Width="1.25" />
+    <Position X="5.25" Y="6" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Model\Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.ViewModel.ArmorCardVM">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAABAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ViewModel\ArmorCardVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.ViewModel.CardVM">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABACAAAAAAAAAAAABhAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ViewModel\CardVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.ViewModel.UnitCardVM">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACACAAAAAAAAAAAAAAAQAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ViewModel\UnitCardVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.ViewModel.WeaponCardVM">
+    <Position X="16.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ViewModel\WeaponCardVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.ViewModel.WarriorCardVM">
+    <Position X="14" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ViewModel\WarriorCardVM.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="Assets.Scripts.Model.CardType">
@@ -85,7 +120,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="Assets.Scripts.Model.PartsType">
-    <Position X="6.25" Y="6.5" Width="1.75" />
+    <Position X="6.75" Y="7.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAIAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Model\MonsterBodyParts.cs</FileName>

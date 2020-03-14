@@ -13,11 +13,11 @@ namespace Assets.Scripts.Model
         Leg,
         Body
     }
-    class MonsterBodyParts : Item
+    public class MonsterBodyParts : Item
     {
         public PartsType Type { get; set; }
 
-        public MonsterBodyParts(string title, PartsType type, CardType cardType) : base(title, cardType)
+        public MonsterBodyParts(string title, int cost, string description, PartsType type, CardType cardType) : base(title, cost, description, cardType)
         {
             Type = type;
         }

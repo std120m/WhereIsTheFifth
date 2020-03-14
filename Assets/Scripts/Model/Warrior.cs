@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Model
 {
-    class Warrior : Unit
+    public class Warrior : Unit
     {
-        public Effect Effect { get; set; }
+        public int Cost { get; set; }
 
-        public Warrior(int damage, int protect, string name, int health, int maxCountItems, Effect effect, CardType cardType) : base(damage, protect, name, health, maxCountItems, cardType)
+        public Warrior(int damage, int protect, string name, int cost, string description, int health, int maxCountItems, CardType cardType) : base(damage, protect, name, description, health, maxCountItems, cardType)
         {
-
+            Cost = cost;
         }
     }
 }

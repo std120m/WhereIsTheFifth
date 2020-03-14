@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Model
 {
-    class Unit : CardObject
+    public class Unit : CardObject
     {
         public List<Item> Items { get; set; }
         public int Damage { get; set; }
         public int Protect { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; }        
         public int Health { get; set; }
         public int MaxCountItems { get; set; }
 
         delegate void AttackHandler(Unit unit);
         event AttackHandler Atacked;
 
-        public Unit(int damage, int protect, string name, int health, int maxCountItems, CardType cardType) : base(cardType)
+        public Unit(int damage, int protect, string name, string description, int health, int maxCountItems, CardType cardType) : base(description, cardType)
         {
             Damage = damage;
             Protect = protect;

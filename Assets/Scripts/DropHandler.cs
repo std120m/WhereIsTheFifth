@@ -21,7 +21,9 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
         CardMovement card = eventData.pointerDrag.GetComponent<CardMovement>();
 
         if (card)
+        {
             card.TempCardTransform = transform;
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)

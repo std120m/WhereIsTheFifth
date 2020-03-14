@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    GameObject TempCard;
+    public GameObject TempCard;
     public Transform DefaultParent, TempCardTransform;
 
     void Awake()
@@ -28,8 +28,8 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         pos.z = 0;
         transform.position = pos;
 
-        if (TempCard.transform.parent != DefaultParent)
-            TempCard.transform.SetParent(DefaultParent);
+        if (TempCard.transform.parent != TempCardTransform)
+            TempCard.transform.SetParent(TempCardTransform);
 
         CheckPosition();
     }

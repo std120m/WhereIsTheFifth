@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 9017449674950051231}
   - component: {fileID: 5805004725544591033}
   - component: {fileID: 8991837801386572368}
+  - component: {fileID: 3350371032487351821}
   m_Layer: 5
   m_Name: UnitCardPref
   m_TagString: Untagged
@@ -245,7 +246,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!114 &8991837801386572368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,8 +259,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a71494be73a59834196a04b3349590e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OldParent: {fileID: 0}
+  TempCard: {fileID: 0}
+  DefaultParent: {fileID: 0}
   TempCardTransform: {fileID: 0}
+--- !u!114 &3350371032487351821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806401342538176416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f87ef815cd99a946be420ac3a78db0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Image: {fileID: 5461129058932017903}
+  Descriprion: {fileID: 0}
+  EffectName: {fileID: 0}
+  EffectDescription: {fileID: 0}
+  Damage: {fileID: 4032051814785104350}
+  Protect: {fileID: 5516743829696437706}
+  Health: {fileID: 1703281071661165531}
+  Name: {fileID: 1752076159445440124}
 --- !u!1 &3195670947670071583
 GameObject:
   m_ObjectHideFlags: 0

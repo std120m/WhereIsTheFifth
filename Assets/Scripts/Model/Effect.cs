@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Model
 {
-    class Effect
+    public class Effect
     {
         public int BonusDamage { get; set; }
         public int BonusProtect { get; set; }

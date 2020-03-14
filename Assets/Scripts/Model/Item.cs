@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Model
 {   
-    class Item : CardObject 
+    public class Item : CardObject 
     {
         public string Title { get; set; }
+        public int Cost { get; set; }
 
-        public Item(string title, CardType cardType) : base(cardType)
+        public Item(string title, int cost, string description, CardType cardType) : base(description, cardType)
         {
             Title = title;
+            Cost = cost;
         }
     }
 }
