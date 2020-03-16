@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
 namespace Assets.Scripts.ViewModel
 {
@@ -16,12 +17,14 @@ namespace Assets.Scripts.ViewModel
         public TextMeshProUGUI Health;
         public TextMeshProUGUI Name;
 
-        public UnitCardVM(Unit unit, string imagePath) : base(unit, imagePath)
+        public override void ShowCard(CardVM unit)
         {
-            Damage.text = unit.Damage.ToString();
-            Protect.text = unit.Protect.ToString();
-            Health.text = unit.Health.ToString();
-            Name.text = unit.Name;
+            Debug.Log("2");
+            base.ShowCard(unit);
+            Damage.text = (unit.CardObject as Unit).Damage.ToString();
+            Protect.text = (unit.CardObject as Unit).Protect.ToString();
+            Health.text = (unit.CardObject as Unit).Health.ToString();
+            Name.text = (unit.CardObject as Unit).Name.ToString();
         }
     }
 }

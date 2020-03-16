@@ -14,5 +14,15 @@ namespace Assets.Scripts.Model
         public int BonusHealth { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
+        public Effect(string name, string description, int bonusDamage = 0, int bonusProtect = 0, int bonusHealth = 0, int bonusItemSlot = 0)
+        {
+            BonusProtect = bonusProtect;
+            BonusDamage = bonusDamage;
+            BonusItemSlot = bonusItemSlot;
+            BonusHealth = bonusHealth;
+            Name = name;
+            Description = description;
+        }
     }
 }

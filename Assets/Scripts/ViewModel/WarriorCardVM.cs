@@ -6,16 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
 namespace Assets.Scripts.ViewModel
 {
-    class WarriorCardVM : UnitCardVM
+    public class WarriorCardVM : UnitCardVM
     {
         public TextMeshProUGUI Cost;
 
-        public WarriorCardVM(Warrior warrior, string imagePath) : base(warrior, imagePath)
+        public override void ShowCard(CardVM warrior)
         {
-            Cost.text = warrior.Cost.ToString();
+            Debug.Log("3");
+            base.ShowCard(warrior);
+            Cost.text = (warrior.CardObject as Warrior).Cost.ToString();
         }
     }
 }

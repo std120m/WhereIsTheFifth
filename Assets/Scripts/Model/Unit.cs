@@ -18,15 +18,15 @@ namespace Assets.Scripts.Model
         delegate void AttackHandler(Unit unit);
         event AttackHandler Atacked;
 
-        public Unit(int damage, int protect, string name, string description, int health, int maxCountItems, CardType cardType) : base(description, cardType)
-        {
-            Damage = damage;
-            Protect = protect;
-            Name = name;
-            Health = health;
-            MaxCountItems = maxCountItems;
-            Items = new List<Item>();
-        }
+        //public Unit(int damage, int protect, string name, string description, int health, int maxCountItems = 3, Effect effect = null) : base(description, CardType.Warrior, effect)
+        //{
+        //    Damage = damage;
+        //    Protect = protect;
+        //    Name = name;
+        //    Health = health;
+        //    MaxCountItems = maxCountItems;
+        //    Items = new List<Item>();
+        //}
         
         public void Attack(Unit unit)
         {

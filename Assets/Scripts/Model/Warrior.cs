@@ -10,9 +10,9 @@ namespace Assets.Scripts.Model
     {
         public int Cost { get; set; }
 
-        public Warrior(int damage, int protect, string name, int cost, string description, int health, int maxCountItems, CardType cardType) : base(damage, protect, name, description, health, maxCountItems, cardType)
-        {
-            Cost = cost;
-        }
+        //public Warrior(int damage, int protect, string name, int cost, string description, int health, int maxCountItems, CardType cardType, Effect effect = null) : base(damage, protect, name, description, health, maxCountItems, cardType, effect)
+        //{
+        //    Cost = cost;
+        //}
     }
 }

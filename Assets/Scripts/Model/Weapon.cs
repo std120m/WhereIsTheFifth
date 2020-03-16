@@ -9,9 +9,9 @@ namespace Assets.Scripts.Model
     public class Weapon : Item
     {
         public int Damage { get; set; }
-        public Weapon(string title, int cost, int damage, string description, CardType cardType) : base(title, cost, description, cardType)
-        {
-            Damage = damage;
-        }
+        //public Weapon(string title, int cost, int damage, string description, CardType cardType) : base(title, cost, description, cardType)
+        //{
+        //    Damage = damage;
+        //}
     }
 }

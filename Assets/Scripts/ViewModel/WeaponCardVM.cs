@@ -15,11 +15,12 @@ namespace Assets.Scripts.ViewModel
         public TextMeshProUGUI Damage;
         public TextMeshProUGUI Cost;
 
-        public WeaponCardVM(Weapon weapon, string imagePath) : base(weapon, imagePath)
+        public override void ShowCard(CardVM weapon)
         {
-            Title.text = weapon.Title;
-            Damage.text = weapon.Damage.ToString();
-            Cost.text = weapon.Cost.ToString();
+            base.ShowCard(weapon);
+            Title.text = (weapon as WeaponCardVM).Title.text;
+            Damage.text = (weapon as WeaponCardVM).Damage.text;
+            Cost.text = (weapon as WeaponCardVM).Cost.text;
         }
     }
 }

@@ -20,10 +20,10 @@ namespace Assets.Scripts.Model
         public CardType CardType { get; set; }
         public Effect Effect { get; set; }
 
-        public CardObject(string description, CardType cardType, Effect effect = null)
-        {
-            CardType = cardType;
-            Description = description;
-        }
+        //public CardObject(string description, CardType cardType, Effect effect = null)
+        //{
+        //    CardType = cardType;
+        //    Description = description;
+        //}
     }
 }

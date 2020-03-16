@@ -11,10 +11,10 @@ namespace Assets.Scripts.Model
         public string Title { get; set; }
         public int Cost { get; set; }
 
-        public Item(string title, int cost, string description, CardType cardType) : base(description, cardType)
-        {
-            Title = title;
-            Cost = cost;
-        }
+        //public Item(string title, int cost, string description, CardType cardType) : base(description, cardType)
+        //{
+        //    Title = title;
+        //    Cost = cost;
+        //}
     }
 }

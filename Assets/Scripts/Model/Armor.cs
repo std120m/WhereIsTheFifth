@@ -9,9 +9,9 @@ namespace Assets.Scripts.Model
     public class Armor : Item
     {
         public int Protect { get; set; }
-        public Armor(string title, int cost, string description, int protect, CardType cardType) : base(title, cost, description, cardType)
-        {
-            Protect = protect;
-        }
+        //public Armor(string title, int cost, string description, int protect, CardType cardType) : base(title, cost, description, cardType)
+        //{
+        //    Protect = protect;
+        //}
     }
 }

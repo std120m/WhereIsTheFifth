@@ -17,9 +17,9 @@ namespace Assets.Scripts.Model
     {
         public PartsType Type { get; set; }
 
-        public MonsterBodyParts(string title, int cost, string description, PartsType type, CardType cardType) : base(title, cost, description, cardType)
-        {
-            Type = type;
-        }
+        //public MonsterBodyParts(string title, int cost, string description, PartsType type, CardType cardType) : base(title, cost, description, cardType)
+        //{
+        //    Type = type;
+        //}
     }
 }
