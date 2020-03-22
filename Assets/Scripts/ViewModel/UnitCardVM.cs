@@ -19,7 +19,6 @@ namespace Assets.Scripts.ViewModel
 
         public override void ShowCard(CardVM unit)
         {
-            Debug.Log("2");
             base.ShowCard(unit);
             Damage.text = (unit.CardObject as Unit).Damage.ToString();
             Protect.text = (unit.CardObject as Unit).Protect.ToString();

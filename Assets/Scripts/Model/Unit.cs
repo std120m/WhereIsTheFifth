@@ -8,6 +8,8 @@ namespace Assets.Scripts.Model
 {
     public class Unit : CardObject
     {
+        public Armor Armor { get; set; }
+        public Weapon Weapon { get; set; }
         public List<Item> Items { get; set; }
         public int Damage { get; set; }
         public int Protect { get; set; }
@@ -33,10 +35,23 @@ namespace Assets.Scripts.Model
             Atacked?.Invoke(unit);
         }
 
+        public int SumDamage()
+        {
+            if (Weapon == null)
+                return Damage;
+            else
+                return Damage + Weapon.Damage;
+        }
+
         public void OnAttacked(Unit unit)
         {
-            if(unit == this)
-                Health -= unit.Damage;
+            if (unit == this)
+            {
+                if(Armor != null && Armor.CurStrength > 0)
+                    Armor.CurStrength -= unit.SumDamage() - Protect - Armor.Protect;
+                else
+                    Health -= unit.SumDamage() - Protect;
+            }
         }
 
         public void AddItem(Item item)

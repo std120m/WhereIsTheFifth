@@ -7,6 +7,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 {
     public GameObject TempCard;
     public Transform DefaultParent, TempCardTransform;
+    public bool isDraggable;
 
     void Awake()
     {
@@ -17,6 +18,12 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         DefaultParent = transform.parent;
         TempCardTransform = transform.parent;
+
+        isDraggable = DefaultParent.GetComponent<DropHandler>().FieldType == FieldType.warriors;
+
+        if (!isDraggable)
+            return;
+
         TempCard.transform.SetParent(DefaultParent);
         transform.SetParent(DefaultParent.parent);
         GetComponent<CanvasGroup>().blocksRaycasts = false;
@@ -24,10 +31,13 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!isDraggable)
+            return;
+
         Vector3 pos = Camera.allCameras[0].ScreenToWorldPoint(eventData.position);
         pos.z = 0;
         transform.position = pos;
-
+        
         if (TempCard.transform.parent != TempCardTransform)
             TempCard.transform.SetParent(TempCardTransform);
 
@@ -36,6 +46,9 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!isDraggable)
+            return;
+
         transform.SetParent(DefaultParent);
         GetComponent<CanvasGroup>().blocksRaycasts = true;
 

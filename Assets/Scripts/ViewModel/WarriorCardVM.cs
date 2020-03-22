@@ -16,7 +16,6 @@ namespace Assets.Scripts.ViewModel
 
         public override void ShowCard(CardVM warrior)
         {
-            Debug.Log("3");
             base.ShowCard(warrior);
             Cost.text = (warrior.CardObject as Warrior).Cost.ToString();
         }

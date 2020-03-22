@@ -20,7 +20,6 @@ namespace Assets.Scripts.ViewModel
 
         public virtual void ShowCard(CardVM card)
         {
-            Debug.Log("1");
             CardObject = card.CardObject;
             EffectName.text = CardObject.Effect.Name;
             EffectDescription.text = CardObject.Effect.Description;
