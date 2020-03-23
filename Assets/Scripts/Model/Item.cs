@@ -11,6 +11,11 @@ namespace Assets.Scripts.Model
         public string Title { get; set; }
         public int Cost { get; set; }
 
+        public override string ToString()
+        {
+            return Title;
+        }
+
         //public Item(string title, int cost, string description, CardType cardType) : base(description, cardType)
         //{
         //    Title = title;

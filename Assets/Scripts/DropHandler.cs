@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Model;
+using Assets.Scripts.ViewModel;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -27,7 +29,23 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
         CardMovement card = eventData.pointerDrag.GetComponent<CardMovement>();
 
         if (card)
+        {
+            Debug.Log(GameManager.Instance.ToString());
+            GameManager.Instance.Game.ActiveWarriors.Add(card.GetComponent<UnitCardVM>().CardObject as Unit);
+            GameManager.Instance.Game.HandWarriors.Remove(card.GetComponent<UnitCardVM>().CardObject as Unit);
+            Debug.Log($"Card {card.GetComponent<UnitCardVM>().CardObject.ToString()} was moved from hand to activeField");
+            Debug.Log($"hand:");
+            foreach (Unit warrior in GameManager.Instance.Game.HandWarriors)
+            {
+                Debug.Log(warrior.ToString());
+            }
+            Debug.Log($"activeField:");
+            foreach (Unit warrior in GameManager.Instance.Game.ActiveWarriors)
+            {
+                Debug.Log(warrior.ToString());
+            }
             card.DefaultParent = transform;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)

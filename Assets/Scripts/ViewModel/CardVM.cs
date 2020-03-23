@@ -29,7 +29,7 @@ namespace Assets.Scripts.ViewModel
         private void Start()
         {
             ShowCard(CardManager.AllCards[transform.GetSiblingIndex()]);
-            Debug.Log("Card was show");
+            Debug.Log($"Card {CardObject.ToString()} was show");
         }
     }
 }
