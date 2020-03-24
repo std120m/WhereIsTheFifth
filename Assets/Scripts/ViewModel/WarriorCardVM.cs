@@ -7,17 +7,26 @@ using System.Threading.Tasks;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Assets.Scripts.ViewModel
 {
-    public class WarriorCardVM : UnitCardVM
+    public class WarriorCardVM : UnitCardVM, IPointerClickHandler
     {
         public TextMeshProUGUI Cost;
 
-        public override void ShowCard(CardVM warrior)
+        public delegate void ClickHandler(Warrior sender);
+        public event ClickHandler Click;
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            Click?.Invoke(CardObject as Warrior);
+        }
+
+        public override void ShowCard(CardObject warrior)
         {
             base.ShowCard(warrior);
-            Cost.text = (warrior.CardObject as Warrior).Cost.ToString();
+            Cost.text = (warrior as Warrior).Cost.ToString();
         }
     }
 }

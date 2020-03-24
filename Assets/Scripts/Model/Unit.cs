@@ -25,6 +25,27 @@ namespace Assets.Scripts.Model
             return Name;
         }
 
+        public override CardObject GetCopy()
+        {
+            
+            Unit copy = new Unit();
+
+            copy.Armor = Armor;
+            copy.Weapon = Weapon;
+            copy.Items = Items;
+            copy.Damage = Damage;
+            copy.Protect = Protect;
+            copy.Name = Name;
+            copy.Health = Health;
+            copy.MaxCountItems = MaxCountItems;
+
+            copy.CardType = CardType;
+            copy.Description = Description;
+            copy.Effect = Effect;
+
+            return copy;
+        }
+
         //public Unit(int damage, int protect, string name, string description, int health, int maxCountItems = 3, Effect effect = null) : base(description, CardType.Warrior, effect)
         //{
         //    Damage = damage;

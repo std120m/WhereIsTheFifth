@@ -16,6 +16,20 @@ namespace Assets.Scripts.Model
             return Title;
         }
 
+        public override CardObject GetCopy()
+        {
+            Item copy = new Item();
+
+            copy.Title = Title;
+            copy.Cost = Cost;
+
+            copy.CardType = CardType;
+            copy.Description = Description;
+            copy.Effect = Effect;
+
+            return copy;
+        }
+
         //public Item(string title, int cost, string description, CardType cardType) : base(description, cardType)
         //{
         //    Title = title;

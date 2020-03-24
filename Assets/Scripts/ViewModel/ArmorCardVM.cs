@@ -15,12 +15,12 @@ namespace Assets.Scripts.ViewModel
         public TextMeshProUGUI Protect;
         public TextMeshProUGUI Cost;
 
-        public override void ShowCard(CardVM armor)
+        public override void ShowCard(CardObject armor)
         {
             base.ShowCard(armor);
-            Title.text = (armor as ArmorCardVM).Title.text;
-            Protect.text = (armor as ArmorCardVM).Protect.text;
-            Cost.text = (armor as ArmorCardVM).Cost.text;
+            Title.text = (armor as Armor).Title;
+            Protect.text = (armor as Armor).Protect.ToString();
+            Cost.text = (armor as Armor).Cost.ToString();
         }
     }
 }

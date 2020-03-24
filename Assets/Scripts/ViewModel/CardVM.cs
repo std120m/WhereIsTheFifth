@@ -18,18 +18,25 @@ namespace Assets.Scripts.ViewModel
         public TextMeshProUGUI EffectName;
         public TextMeshProUGUI EffectDescription;
 
-        public virtual void ShowCard(CardVM card)
+        public virtual void ShowCard(CardObject card)
         {
-            CardObject = card.CardObject;
-            EffectName.text = CardObject.Effect.Name;
-            EffectDescription.text = CardObject.Effect.Description;
+            CardObject = card;
+            if (CardObject.Effect == null)
+            {
+                EffectName.text = "";
+                EffectDescription.text = "";
+            }
+            else
+            {
+                EffectName.text = CardObject.Effect.Name;
+                EffectDescription.text = CardObject.Effect.Description;
+            }
             Descriprion.text = CardObject.Description;
+            Debug.Log($"Card {CardObject.ToString()} was show");
         }
 
         private void Start()
         {
-            ShowCard(CardManager.AllCards[transform.GetSiblingIndex()]);
-            Debug.Log($"Card {CardObject.ToString()} was show");
         }
     }
 }

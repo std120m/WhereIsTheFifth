@@ -17,13 +17,13 @@ namespace Assets.Scripts.ViewModel
         public TextMeshProUGUI Health;
         public TextMeshProUGUI Name;
 
-        public override void ShowCard(CardVM unit)
+        public override void ShowCard(CardObject unit)
         {
             base.ShowCard(unit);
-            Damage.text = (unit.CardObject as Unit).Damage.ToString();
-            Protect.text = (unit.CardObject as Unit).Protect.ToString();
-            Health.text = (unit.CardObject as Unit).Health.ToString();
-            Name.text = (unit.CardObject as Unit).Name.ToString();
+            Damage.text = (unit as Unit).Damage.ToString();
+            Protect.text = (unit as Unit).Protect.ToString();
+            Health.text = (unit as Unit).Health.ToString();
+            Name.text = (unit as Unit).Name.ToString();
         }
     }
 }

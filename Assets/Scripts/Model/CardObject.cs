@@ -20,10 +20,21 @@ namespace Assets.Scripts.Model
         public CardType CardType { get; set; }
         public Effect Effect { get; set; }
 
+        public virtual CardObject GetCopy()
+        {
+            CardObject copy = new CardObject();
+
+            copy.CardType = CardType;
+            copy.Description = Description;
+            copy.Effect = Effect;
+
+            return copy;
+        }
+
         //public CardObject(string description, CardType cardType, Effect effect = null)
         //{
         //    CardType = cardType;
         //    Description = description;
         //}
-    }
+    }    
 }

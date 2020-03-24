@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
 namespace Assets.Scripts.ViewModel
 {
@@ -15,12 +16,13 @@ namespace Assets.Scripts.ViewModel
         public TextMeshProUGUI Damage;
         public TextMeshProUGUI Cost;
 
-        public override void ShowCard(CardVM weapon)
+        public override void ShowCard(CardObject weapon)
         {
             base.ShowCard(weapon);
-            Title.text = (weapon as WeaponCardVM).Title.text;
-            Damage.text = (weapon as WeaponCardVM).Damage.text;
-            Cost.text = (weapon as WeaponCardVM).Cost.text;
+
+            Title.text = (weapon as Weapon).Title;
+            Damage.text = (weapon as Weapon).Damage.ToString();
+            Cost.text = (weapon as Weapon).Cost.ToString();
         }
     }
 }

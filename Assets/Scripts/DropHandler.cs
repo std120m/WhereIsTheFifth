@@ -31,9 +31,9 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
         if (card)
         {
             Debug.Log(GameManager.Instance.ToString());
-            GameManager.Instance.Game.ActiveWarriors.Add(card.GetComponent<UnitCardVM>().CardObject as Unit);
-            GameManager.Instance.Game.HandWarriors.Remove(card.GetComponent<UnitCardVM>().CardObject as Unit);
-            Debug.Log($"Card {card.GetComponent<UnitCardVM>().CardObject.ToString()} was moved from hand to activeField");
+            (card.GetComponent<WarriorCardVM>().CardObject as Warrior).JoinToFight();
+            card.DefaultParent = transform;
+            Debug.Log($"Card {card.GetComponent<UnitCardVM>().CardObject.ToString()} join to fight");
             Debug.Log($"hand:");
             foreach (Unit warrior in GameManager.Instance.Game.HandWarriors)
             {
@@ -44,7 +44,6 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
             {
                 Debug.Log(warrior.ToString());
             }
-            card.DefaultParent = transform;
         }
     }
 
