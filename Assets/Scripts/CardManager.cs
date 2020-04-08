@@ -28,6 +28,11 @@ public static class ObjectManager
         ["3"] = new Warrior { Name = "Коля", Description = "Тупо Коля", Damage = 2, Protect = 1, Health = 5, MaxCountItems = 3, Cost = 0, Effect = null, Weapon = (Weapons["2"].GetCopy() as Weapon) },
         ["4"] = new Warrior { Name = "Ваня", Description = "Тупо Ваня", Damage = 1, Protect = 3, Health = 3, MaxCountItems = 3, Cost = 0, Effect = null, Weapon = (Weapons["2"].GetCopy() as Weapon) }
     };
+
+    public static Dictionary<string, Unit> CatacombsEnemies = new Dictionary<string, Unit>
+    {
+        ["monster"] = new Unit { Name = "Монстер", Description = "Страшный монстер", Damage = 2, Protect = 3, Health = 15, MaxCountItems = 1, Effect = null, Weapon = null }
+    };
 }
 
 public static class CardManager

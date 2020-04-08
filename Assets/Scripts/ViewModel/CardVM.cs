@@ -35,7 +35,7 @@ namespace Assets.Scripts.ViewModel
             Debug.Log($"Card {CardObject.ToString()} was show");
         }
 
-        private void Start()
+        private void Update()
         {
         }
     }

@@ -19,7 +19,7 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         DefaultParent = transform.parent;
         TempCardTransform = transform.parent;
 
-        isDraggable = DefaultParent.GetComponent<DropHandler>().FieldType == FieldType.warriors;
+        isDraggable = DefaultParent.GetComponent<DropHandler>().FieldType == FieldType.warriors || DefaultParent.GetComponent<DropHandler>().FieldType == FieldType.playerActive;
 
         if (!isDraggable)
             return;

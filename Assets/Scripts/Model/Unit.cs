@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.Model
 {
@@ -17,8 +18,14 @@ namespace Assets.Scripts.Model
         public int Health { get; set; }
         public int MaxCountItems { get; set; }
 
-        delegate void AttackHandler(Unit unit);
-        event AttackHandler Atacked;
+        public delegate void AttackHandler(Unit defender, Unit attacker);
+        public event AttackHandler Attack;
+
+        public delegate void DeathHandler(Unit unit);
+        public event DeathHandler Death;
+
+        public delegate void UpdateHandler(CardObject sender);
+        public event UpdateHandler UpdateInfo;
 
         public override string ToString()
         {
@@ -56,28 +63,58 @@ namespace Assets.Scripts.Model
         //    Items = new List<Item>();
         //}
 
-        public void Attack(Unit unit)
+        public void OnAttack(Unit defender, Unit attacker)
         {
-            Atacked?.Invoke(unit);
+            Attack?.Invoke(defender, attacker);
         }
 
         public int SumDamage()
         {
-            if (Weapon == null)
-                return Damage;
-            else
-                return Damage + Weapon.Damage;
+            int resultDamage = Damage;
+
+            if (Weapon != null)
+                resultDamage += Weapon.Damage;
+            if (Effect != null)
+                resultDamage += Effect.BonusDamage;
+
+            return resultDamage;
         }
 
-        public void OnAttacked(Unit unit)
+        public int SumProtect()
         {
-            if (unit == this)
+            int resultProtect = Protect;
+
+            if (Effect != null)
+                resultProtect += Effect.BonusProtect;
+
+            return resultProtect;
+        }
+        
+        public void WasAttacked(Unit defender, Unit attacker)
+        {
+            if (defender == this)
             {
-                if(Armor != null && Armor.CurStrength > 0)
-                    Armor.CurStrength -= unit.SumDamage() - Protect - Armor.Protect;
+                int oldHealth = Health;
+                if (Armor != null && Armor.CurStrength > 0)
+                    Armor.CurStrength -= (attacker.SumDamage() - SumProtect() - Armor.Protect < 0) ? 0 : attacker.SumDamage() - SumProtect() - Armor.Protect;
                 else
-                    Health -= unit.SumDamage() - Protect;
+                    Health -= (attacker.SumDamage() - SumProtect() < 0) ? 0 : attacker.SumDamage() - SumProtect();
+
+                if (Health <= 0)
+                {
+                    OnDeath();
+                    return;
+                }
+
+                Debug.Log($"{defender.ToString()} was attacked by {attacker.ToString()} (получено урона - {oldHealth - Health})");
+
+                UpdateInfo?.Invoke(defender);
             }
+        }
+
+        public void OnDeath()
+        {
+            Death?.Invoke(this);
         }
 
         public void AddItem(Item item)
